@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Small rails app to demonstrate `belongs_to` preload bug.
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Open rails console and type
+```
+Lead.create name: "ranu", email: "abc@xyz.com", agent_code: "susa"
+Agent.create name: "Susa", email: "susa@test.com", code: "SUSA"
+a = Lead.includes(:agent).where(id: 1).first
+```
+This gives `NoMethodError (undefined method first' for nil:NilClass)`
