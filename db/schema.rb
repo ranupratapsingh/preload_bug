@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2020_06_19_180455) do
     t.string "code"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
+  end;
 
   create_table "leads", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
@@ -26,6 +26,6 @@ ActiveRecord::Schema.define(version: 2020_06_19_180455) do
     t.string "agent_code"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
+  end;
 
-end
+end;
